@@ -16,8 +16,8 @@ export async function GET(request) {
         if (!user) {
             return NextResponse.json({ message: 'User not found' }, { status: 404 });
         }
-        const { username,email,quotes } = user;
-        const  userInfo ={username,email,quotes} ;
+        const { username,email,quotes,_id } = user;
+        const  userInfo ={username,email,quotes,_id} ;
         return NextResponse.json(userInfo, { status: 200 });
     } catch (error) {
         return NextResponse.json({ message: 'Error while fetching user profile' }, { status: 400 });
